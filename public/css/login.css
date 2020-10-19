@@ -1,0 +1,165 @@
+/* =========header========= */
+header{
+    width: 100%; height: 35px;
+}
+header h3{
+    width: 100%;
+    line-height: 35px; text-align: center;
+}
+
+/* =========main========== */
+main{
+    width: 100%; height: 530px;
+    background: url('http://www.blackswancake.com/statics/images/22.jpg') no-repeat center;
+    display: flex;
+    justify-content: space-between;
+}
+section{
+    width: 50%;
+    text-align: center;
+    margin-top: 200px;
+}
+section .title{
+    width: 30%; height: 50px;
+    line-height: 50px; 
+    font-weight: bold;
+    border: 1px solid #ccc;
+    margin: 0 auto 30px;
+}
+section input{
+    width: 60%; height: 30px;
+    background: rgba(0 , 0 , 0 , .5);
+    line-height: 30px; text-align: center;
+}
+section button{
+    width: 60%; height: 30px;
+    background: rgba(0 , 0 , 0 , .5);
+    line-height: 30px; text-align: center;
+    border: 0; outline: none;
+    margin-top: 10px;
+}
+section:first-child,section:first-child a{
+    color: #fff;
+}
+section:first-child input{
+    color: #fff;
+}
+section:first-child button{
+    color: #fff;
+}
+section:first-child div:last-child{
+    margin-top: 10px;
+    margin-left: 300px;
+}
+section:last-child input{
+    background: rgba(255 , 255 , 255 , .5);
+}
+section:last-child .code{
+    background: rgba(255 , 255 , 255 , .5);
+}
+section:last-child .register{
+    background: rgba(255 , 255 , 255 , .5);
+}
+/* section:last-child div:nth-child(3){
+    margin-left: 40px;
+} */
+/* ==========nav=========
+nav{
+    position: fixed;
+    left: 20px; bottom: 60px;
+}
+nav li{
+    line-height: 30px;
+}
+nav a{
+    color: #ccc;
+    padding-right: 10px;
+}
+nav li:nth-child(6) a:last-child,nav li:nth-child(7) a:last-child{
+    border-left: 1px solid #ccc;
+    padding-left: 10px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
