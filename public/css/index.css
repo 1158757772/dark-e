@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+#bg{
+    width: 100%;
+    height: 100%;
+    background: url(http://www.blackswancake.com/statics/images/01.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+#title{
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top: 20%;
+}
+#title>img{
+    width: 300px;
+    height: 90px;
+}
