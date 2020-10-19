@@ -5,7 +5,10 @@ $next=$('.next');
 $bg=['http://www.blackswancake.com/statics/images/ceo-1.jpg','http://www.blackswancake.com/statics/images/ceo-2.jpg','http://www.blackswancake.com/statics/images/ceo-3.jpg','http://www.blackswancake.com/statics/images/ceo-4.jpg']
 $item.each(function(i,elem){
 console.log($bg[i])
-$item.eq(i).css('background','url('+$bg[i]+')');
+$item.eq(i).css({
+    'background':'url('+$bg[i]+')',
+    'background-size':'cover'
+});
 })
 
  $prev.css('display','none');
