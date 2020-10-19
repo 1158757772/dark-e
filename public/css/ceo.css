@@ -76,8 +76,8 @@ h3{
     top: 0;
     display: none;
 }
-.page04-item:chi{
-    position: absolute;
+.page04-item>div{
+    width: 100%;
 }
 .active{
     display: block;

@@ -14,8 +14,9 @@ header,footer,nav,main,article,aside,section,figure,figcaption{ display:block;}
 nav{
     position: fixed;
     left: 20px; bottom: 60px;
-    width: 400px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
+    z-index: 1000;
 }
 nav:hover a{
     color: #fff;
