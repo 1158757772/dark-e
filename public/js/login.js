@@ -1,4 +1,12 @@
+$('input').on( 'click' , function (){
+    let value = $(this).attr('data-value');
+
+    $(this).val('').siblings().val( value );
+} )
+
 $('.login').on( 'click' , function (){
+    
+
     let url = 'http://localhost:3000/user/login';
     let user = $('.user').val();
     let pass = $('.pass').val();

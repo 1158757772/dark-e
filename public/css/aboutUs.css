@@ -1,0 +1,47 @@
+body{
+    background: url('http://www.blackswancake.com/statics/images/33.jpg') no-repeat center 0;
+}
+
+/* =========section========= */
+section{
+    margin-top: 100px;
+    text-align: center;
+    color: #fff;
+}
+h3,p{
+    line-height: 20px;
+    clear: both;
+}
+button{
+    width: 130px; height: 50px; background: none;
+    line-height: 30px;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-bottom: 20px;
+    outline: none;
+}
+img{
+    margin: 0 20px 20px;
+}
+p:last-of-type{
+    background: url('http://www.blackswancake.com/statics/images/beian.png') no-repeat 520px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

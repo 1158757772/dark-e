@@ -160,7 +160,9 @@ router.post( '/verify' , ( req , res )=>{
     }
     
     //验证邮箱格式
-    if( !/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(email) ){
+    let reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+
+    if( !reg.test(email) ){
         //不对  
        return res.send( { err : -8 , msg : '邮箱格式不对' } );
     }
