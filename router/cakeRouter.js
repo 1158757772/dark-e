@@ -47,10 +47,10 @@ router.post( '/add' , ( req , res )=>{
 
 // 分类查询
 /**
- * @api {post} /food/getType 分类查询
- * @apiGroup food
+ * @api {post} /cake/getType 分类查询
+ * @apiGroup cake
  *
- * @apiParam {String} type 菜品类型
+ * @apiParam {String} type 蛋糕类型
  *
  * @apiSuccessExample 返回数据示例:
  * {
@@ -73,8 +73,33 @@ router.post('/getType',(req,res)=>{
     })
   })
 
-
-
+// _id查询
+/**
+ * @api {post} /cake/getId 分类查询
+ * @apiGroup cake
+ *
+ * @apiParam {String} _id 蛋糕_id
+ *
+ * @apiSuccessExample 返回数据示例:
+ * {
+ *    err: 0,
+ *    msg: '查询成功',
+ *    item: {...}
+ * }
+ */
+router.post('/getId',(req,res)=>{
+    let {_id}=req.body
+    if (!_id) {
+      return res.send({err:-1,msg:'参数不能为空'})
+    }
+    Food.find({_id})
+    .then((data)=>{
+      res.send({err:0,msg:'查询成功',item:data[0]})
+    })
+    .catch((err)=>{
+      res.send({err:-2,msg:'查询失败'})
+    })
+  })
 
 
 

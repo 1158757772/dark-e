@@ -1,24 +1,59 @@
-
+var str=''
 $.ajax({
-    url: 'localhost:3000/cake/getType',
+    url: 'http://localhost:3000/cake/getType',
     type: 'POST',
     data: {type:'全新系列'},
     success: function (data){
-		console.log(data)
-		//  for(var i=0;i<data.list.length;i++){
+		 for(var i=0;i<data.list.length;i++){
+            if(i==1||i==2){
+                str+=`<div class="page" style="background: url(${data.list[i].imgurl}) center;background-size: cover;">
+            <div class="page-content" style="top:32%;left:72.9%;;cursor:pointer;">
+                <div class="logo"><img src="http://www.blackswancake.com/statics/images/ms-logo.png" style="width: 130px; margin-bottom: 20px;"></div>
+                <h3>${data.list[i].name}</h3>
+                <p>-</p>
+                <p style="line-height: 20px;"  class="desc"></p>
+                <p>-</p>
+                <div class="x-d" data-id="${data.list[i]._id}"><a class="iconfont icon-tianjia" style="color:#7d7d7d ;font-size: 24px;"></a></div>
+            </div>
+        </div>`
+            }else{
+                str+=`<div class="page" style="background: url(${data.list[i].imgurl}) center;background-size: cover;" >
+            <div class="page-content" style="top:32%;left:22.9%;;cursor:pointer;">
+                <div class="logo"><img src="http://www.blackswancake.com/statics/images/ms-logo.png" style="width: 130px; margin-bottom: 20px;"></div>
+                <h3>${data.list[i].name}</h3>
+                <p>-</p>
+                <p style="line-height: 20px;" class="desc"></p>
+                <p>-</p>
+                <div class="x-d" data-id="${data.list[i]._id}"><a class="iconfont icon-tianjia" style="color:#7d7d7d ;font-size: 24px;"></a></div>
+            </div>
+        </div>`
+			}
 			
-		// 	$('tbody').append(`
-		// 	<tr class="text-c">
-		// 			<td><input name="" type="checkbox" value=""></td>
-		// 			<td class="_id">${data.list[i]._id}</td>
-		// 			<td class="_dataName">${data.list[i].name}</td>
-		// 			<td class="_url"><a href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')"><img width="210" class="picture-thumb" src="${data.list[i].imgurl}"></a></td>
-		// 			<td class="text-l _desc"><a class="maincolor" href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')">${data.list[i].desc}</a></td>
-		// 			<td class="text-c _price">${data.list[i].price}</td>
-		// 			<td class="_type">${data.list[i].type}</td>
-		// 			<td class="td-manage"><a style="text-decoration:none" onClick="picture_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_edit('图库编辑','picture-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-		// 		</tr>
-		// 	`)
-		// }
+        }
+        $('#container').html(str);
     }
+  }).then((data)=>{
+      
+      for(var i=0;i<data.list.length;i++){
+        let p='';
+          for(var n=0;n<data.list[i].desc.length;n++){
+            p+=`
+            <p>${data.list[i].desc[n]}</p>
+            `
+          }
+          $('.desc').eq(i).html(p);
+      }
+  })
+  $('#container').on('click','.x-d',function(){
+      console.log($(this).attr('data-id'))
+      $.ajax({
+        url: 'http://localhost:3000/cake/getId',
+        type: 'POST',
+        data: {_id:$(this).attr('data-id')},
+        success: function (data){
+             for(var i=0;i<data.list.length;i++){
+            }
+            $('#container').html(str);
+        }
+      })
   })
