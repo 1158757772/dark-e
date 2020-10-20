@@ -1,0 +1,40 @@
+.item{
+    width: 50%;
+    height: 50%;
+    float: left;
+    position: relative;
+    z-index: 1000;
+}
+.item-Chidren{
+    width: 50%;
+    height: 100%;
+    float: left;
+    position: relative;
+    z-index: 1000;
+}
+div{
+    background-size:cover;
+    background-position: center;
+}
+.item-content{
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    margin-left: -40%;
+    top: 50%;
+    margin-top: -50px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    z-index: 1000;
+    cursor: pointer;
+}
+.item-content>h3{
+    padding: 10px 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: inline-block;
+}
+.item:hover .item-content{
+    opacity: 1;
+    transition: all 1s;
+}
