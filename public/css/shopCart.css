@@ -53,6 +53,9 @@ header h3{
     float: right;
     border-left: 1px solid #ccc;
 }
+/* #shopCart .p2 span:last-child{
+    padding-left: 50px;
+} */
 #shopCart .total{
     width: 100%; height: 30px;
     clear: both;
