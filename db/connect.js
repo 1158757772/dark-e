@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //连接数据库
-mongoose.connect('mongodb://localhost/666',{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://192.168.70.236/666',{ useNewUrlParser: true, useUnifiedTopology: true })
 
 // 保存连接数据库对象
 let db = mongoose.connection

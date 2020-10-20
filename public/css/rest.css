@@ -65,8 +65,9 @@ nav li:nth-child(6) a:last-child,nav li:nth-child(7) a:last-child{
     background: #000;
     position: absolute;
     z-index: 999;
+    cursor: pointer;
 }
 .mask:hover{
-    opacity: 0.2;
-    transition: all linear 1s;
+    opacity: 0.5;
+    transition: all linear 2s;
 }
