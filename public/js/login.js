@@ -18,7 +18,7 @@ $('.login').on( 'click' , function (){
         else{
             alert( data.msg );
 
-            location.href = '../html/index.html'
+            location.href = '../html/city.html'
         }
     } )
 } )
