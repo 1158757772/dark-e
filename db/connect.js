@@ -1,9 +1,8 @@
+//加载mongoose模块，用于操作数据库
+const mongoose = require('mongoose');
 
-// 加载mongoose模块，用于在node中操作数据库
-const mongoose = require('mongoose')
-
-// 连接数据库
-mongoose.connect('mongodb://localhost/2005',{ useNewUrlParser: true, useUnifiedTopology: true })
+//连接数据库
+mongoose.connect('mongodb://localhost/666',{ useNewUrlParser: true, useUnifiedTopology: true })
 
 // 保存连接数据库对象
 let db = mongoose.connection
@@ -15,3 +14,14 @@ db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function() {
   console.log('----------db connect ok------------')
 })
+
+
+
+
+
+
+
+
+
+
+

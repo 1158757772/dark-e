@@ -8,6 +8,6 @@ let userSchema = mongoose.Schema( {
 } );
 
 // 把schema对象转换成与数据集合相关的数据模型
-let User = mongoose.model( 'users' , userSchema );
+let User = mongoose.model( 'user' , userSchema );
 
 module.exports = User;
