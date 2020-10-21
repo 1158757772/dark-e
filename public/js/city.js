@@ -9,7 +9,8 @@ $city.on('click',()=>{
 $ul.on('click','li',function(){
     
     turn($(this)).then(()=>{
-            return turn_2()
+        localStorage.setItem("city", $(this).html());
+        return turn_2()
     }).then(()=>{
         location.href="./index.html"
     })
