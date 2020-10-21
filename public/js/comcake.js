@@ -129,9 +129,15 @@ $.ajax({
                     kk=$(' .select-cake').children().eq(i).attr("data-key");
                 }
             }
+            if(localStorage.getItem("buycar")){
+                console.log(JSON.parse(localStorage.getItem("buycar")))
+                let arr=JSON.parse(localStorage.getItem("buycar")).push({_id:data.item._id,size:kk})
+                console.log(arr);
+                //localStorage.setItem("buycar",arr)
+            }else{
+                localStorage.setItem("buycar", JSON.stringify([{_id:data.item._id,size:kk}]));
+            }
             
-            localStorage.setItem("_id", data.item._id);
-            localStorage.setItem("size", kk);
           alert('添加购物车成功')
         })
       })
