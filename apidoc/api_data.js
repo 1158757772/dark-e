@@ -1,9 +1,9 @@
 define({ "api": [
   {
     "type": "post",
-    "url": "/food/add",
+    "url": "/cake/add",
     "title": "添加商品",
-    "group": "food",
+    "group": "cake",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -18,29 +18,71 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "size",
-            "description": "<p>商品大小</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "nums",
-            "description": "<p>商品数量</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
             "field": "price",
-            "description": "<p>商品单价</p>"
+            "description": "<p>商品价格</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": false,
+            "field": "size",
+            "description": "<p>商品尺寸</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "prices",
-            "description": "<p>商品总价</p>"
+            "field": "weight",
+            "description": "<p>商品重量</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "people",
+            "description": "<p>商品推荐食用人数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "taste",
+            "description": "<p>商品口味</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "rawMaterial",
+            "description": "<p>商品主要原料</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "coldStorage",
+            "description": "<p>商品冷藏条件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": false,
+            "field": "desc",
+            "description": "<p>商品描述</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>商品类别</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "imgurl",
+            "description": "<p>商品图片</p>"
           }
         ]
       }
@@ -55,15 +97,15 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "router/foodRouter.js",
-    "groupTitle": "food",
-    "name": "PostFoodAdd"
+    "filename": "router/cakeRouter.js",
+    "groupTitle": "cake",
+    "name": "PostCakeAdd"
   },
   {
     "type": "post",
-    "url": "/food/del",
-    "title": "删除商品",
-    "group": "food",
+    "url": "/cake/getId",
+    "title": "分类查询",
+    "group": "cake",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -71,8 +113,8 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "id",
-            "description": "<p>商品id</p>"
+            "field": "_id",
+            "description": "<p>蛋糕_id</p>"
           }
         ]
       }
@@ -81,21 +123,21 @@ define({ "api": [
       "examples": [
         {
           "title": "返回数据示例:",
-          "content": "{\n   err: 1,\n   msg: '商品删除成功'\n}",
+          "content": "{\n   err: 0,\n   msg: '查询成功',\n   item: {...}\n}",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "router/foodRouter.js",
-    "groupTitle": "food",
-    "name": "PostFoodDel"
+    "filename": "router/cakeRouter.js",
+    "groupTitle": "cake",
+    "name": "PostCakeGetid"
   },
   {
     "type": "post",
-    "url": "/food/update",
-    "title": "修改商品",
-    "group": "food",
+    "url": "/cake/getType",
+    "title": "分类查询",
+    "group": "cake",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -103,43 +145,8 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "id",
-            "description": "<p>商品id</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "name",
-            "description": "<p>商品名称</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "size",
-            "description": "<p>商品大小</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "nums",
-            "description": "<p>商品数量</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "price",
-            "description": "<p>商品单价</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "prices",
-            "description": "<p>商品总价</p>"
+            "field": "type",
+            "description": "<p>蛋糕类型</p>"
           }
         ]
       }
@@ -148,15 +155,15 @@ define({ "api": [
       "examples": [
         {
           "title": "返回数据示例:",
-          "content": "{\n   err: 2,\n   msg: '商品修改成功'\n}",
+          "content": "{\n   err: 0,\n   msg: '查询成功',\n   list: [{...},{...}]\n}",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "router/foodRouter.js",
-    "groupTitle": "food",
-    "name": "PostFoodUpdate"
+    "filename": "router/cakeRouter.js",
+    "groupTitle": "cake",
+    "name": "PostCakeGettype"
   },
   {
     "type": "post",
