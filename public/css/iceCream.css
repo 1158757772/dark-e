@@ -1,0 +1,64 @@
+section{
+    width: 100%; height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.box1,.box2,.box3,.box4{
+    width: 350px;
+    text-align: center;
+    position: absolute;
+}
+.box1 p,.box2 p,.box3 p,.box4 p{
+    height: 20px;
+    line-height: 20px;
+}
+.box1 img,.box2 img,.box3 img,.box4 img{
+    width: 200px;
+}
+section:nth-child(1){
+    background-image: url('http://www.blackswancake.com/images/201511/thumb_img/44_thumb_G_1448005044211.jpg');
+}
+.box1{
+    top: 100px; left: 200px;
+}
+.box1 h3{
+    width: 160px;
+    line-height: 50px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+}
+section:nth-child(2){
+    background-image: url('http://www.blackswancake.com/images/201511/thumb_img/45_thumb_G_1448005734423.jpg');
+}
+.box2{
+    bottom: 100px; right: 30px;
+}
+section:nth-child(3){
+    background-image: url('http://www.blackswancake.com/images/201511/thumb_img/88_thumb_G_1448005754700.jpg');
+}
+.box3{
+    width: 600px;
+    bottom: 20px; left: 50%;
+    margin-left: -300px;
+}
+section:nth-child(4){
+    background-image: url('http://www.blackswancake.com/images/201511/thumb_img/89_thumb_G_1446793283491.jpg');
+}
+.box4{
+    bottom: 130px; left: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
