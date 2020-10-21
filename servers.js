@@ -8,9 +8,9 @@ const cakeRouter = require('./router/cakeRouter');
 const cors = require('cors')
 
 const app = express();
-
+app.use('/',cors())
 app.use( '/static' , express.static( path.join( __dirname , './public' ) ) );
-app.use(cors())
+
 app.use('/',bodyParser.json()); //解析json数据
 app.use('/',bodyParser.urlencoded({extened: false})); // 解析表单数据
 

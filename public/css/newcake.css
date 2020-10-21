@@ -1,3 +1,7 @@
+#container{
+    width: 100%;
+    height: 100%;
+}
 .page{
     width: 100%;
     height: 100%;
@@ -16,4 +20,45 @@
     min-width: 100px;
     border: 1px solid #d1d1d1;
     margin-bottom: 15px;
+}
+.wh-mask{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+    z-index: 999;
+    display: none;
+    text-align: center;
+    color: #535353;
+}
+.wh-mask h3{
+    font-size: 16px;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.do-li{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: #e6e6e6;
+    z-index: 1000;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+}
+.close{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    line-height: 50px;
+    cursor: pointer;
 }

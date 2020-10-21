@@ -22,7 +22,7 @@ nav:hover a{
     color: #fff;
     transition: all 3s;
 }
-ul{
+nav ul{
     position: absolute;
     left: 0;
     bottom: 0;
