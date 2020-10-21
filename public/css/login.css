@@ -10,66 +10,68 @@ header h3{
 
 /* =========main========== */
 main{
-    width: 100%; height: 90%;
+    width: 100%; height: calc(95% - 35px);
     background: url('http://www.blackswancake.com/statics/images/22.jpg') no-repeat center;
     background-size: cover;
-    display: flex;
-    justify-content: space-between;
 }
 section{
-    width: 50%; height: 100%;
+    width: 50%;
     text-align: center;
-    margin-top: 13%;
+    height: 100%;
+    float: left;
+    position: relative;
 }
-section .title{
-    width: 30%; height: 10%;
-    line-height: 360%; 
-    border: 1px solid #ccc;
-    margin: 0 auto 30px;
+section .mid{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30%;
 }
-section div{
-    height: 8%;
+.mid>div{
+    width: 100%;
+    overflow: hidden;
+}
+section h3{
+    display: inline-block;
+    padding: 15px 45px;
+    border: 1px solid #d0d0d0;
+    margin-bottom: 35px;
 }
 section input,section button{
-    height: 100%; 
-    line-height: 100%; text-align: center;
-    font-size: 5%;
-}
-section input{
-    width: 60%;
-    background: rgba(0 , 0 , 0 , .5);
-    display: inline-block;
-}
-section button{
-    width: 60%;
-    background: rgba(0 , 0 , 0 , .5);
-    border: 0; outline: none;
-    margin-top: 3%;
-}
-section:first-child,section:first-child a{
-    color: #fff;
-}
-section:first-child input{
-    color: #fff;
-}
-section:first-child button{
-    color: #fff;
-}
-section:first-child div:last-child{
-    margin-top: 6%;
-    margin-left:50%;
-}
-section:last-child input{
-    background: rgba(255 , 255 , 255 , .5);
-}
-section:last-child .code{
-    background: rgba(255 , 255 , 255 , .5);
-    margin-left: 9.4%;
-}
-section:last-child .register{
-    background: rgba(255 , 255 , 255 , .5);
+    background: #000;
+    width: 100%;
+    height: 100%;
+    display: block;
+    height: 35px;
+    text-align: center;
+    float: left;
+    border: none;
+    outline: none;
+    color: inherit;
 }
 
+.phone{
+    background: #e6e6e6;
+}
+.email,.cipher{
+    background: #f0f0f0;
+}
+.code{
+    background: #ebebeb;
+}
+section button{
+    cursor: pointer;
+}
+section span{
+    float: left;
+    width: 16%;
+    cursor: pointer;
+}
+.left{
+    color:#dbdbdb
+}
+.right{
+    color:#676767;
+}
 
 
 

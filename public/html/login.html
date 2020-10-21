@@ -8,24 +8,28 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <header>
-        <h3>B L A C K S W A N</h3>
-    </header>
+    <div class="pageHeader">
+        <img src="http://www.blackswancake.com/statics/images/logo.png" alt="">
+    </div>
     <main>
-        <section>
+        <section class="left">
+            <div class="mid">
             <h3 class="title">用户登录</h3>
             <div><input class="user" type="text" value="手机号 | 邮箱" data-value="手机号 | 邮箱"></div>
             <div><input class="pass" type="text" value="密码" data-value="密码"></div>
-            <div><button class="login">登录</button></div>
-            <div><a href="#">忘记密码</a></div>
+            <div style="margin-top: 20px;"><button class="login">登录</button></div>
+            <div style="margin-top: 10px;"><a href="#" style="color: #666;">忘记密码</a></div>
+            </div>
         </section>
-        <section>
+        <section class="right">
+            <div class="mid">
             <h3 class="title">用户注册</h3>
             <div><input class="phone" type="text" value="手机号" data-value="手机号"></div>
             <div><input class="email" type="text" value="邮箱" data-value="邮箱"></div>
-            <div><input class="code" type="text" value="输入邮箱验证码" data-value="输入邮箱验证码"><span class="codebtn">获取验证码</span></div>    
+            <div style="width: 120%;"><input class="code" type="text" value="输入邮箱验证码" data-value="输入邮箱验证码" style="width: 83.33%;"><span class="codebtn">获取验证码</span></div>    
             <div><input class="cipher" type="text" value="密码" data-value="密码"></div>    
-            <div><button class="register">确认注册</button></div>
+            <div style="margin-top: 20px;"><button class="register">确认注册</button></div>
+        </div>
         </section>
     </main>
     <nav>

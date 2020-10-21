@@ -1,9 +1,10 @@
-$('input').on( 'click' , function (){
-    let value = $(this).attr('data-value');
 
-    $(this).val('').siblings().val( value );
+$('input').on( 'focus' , function (){
+    $(this).val('');;
 } )
-
+$('input').on('blur',function(){
+    $(this).val($(this).attr('data-value'));
+})
 $('.login').on( 'click' , function (){
     let url = 'http://localhost:3000/user/login';
     let user = $('.user').val();

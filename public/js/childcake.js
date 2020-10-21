@@ -2,7 +2,7 @@ var str=''
 $.ajax({
     url: 'http://localhost:3000/cake/getType',
     type: 'POST',
-    data: {type:'全新系列'},
+    data: {type:'童真系列'},
     success: function (data){
 		 for(var i=0;i<data.list.length;i++){
             if(i==1||i==2||i==3||i==7){

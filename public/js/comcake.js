@@ -2,10 +2,10 @@ var str=''
 $.ajax({
     url: 'http://localhost:3000/cake/getType',
     type: 'POST',
-    data: {type:'全新系列'},
+    data: {type:'经典系列'},
     success: function (data){
 		 for(var i=0;i<data.list.length;i++){
-            if(i==1||i==2||i==3||i==7){
+            if(i==1){
                 str+=`<div class="page" style="background: url(${data.list[i].imgurl}) center;background-size: cover;">
             <div class="page-content" style="top:32%;left:72.9%;;cursor:pointer;">
                 <div class="logo"><img src="http://www.blackswancake.com/statics/images/ms-logo.png" style="width: 130px; margin-bottom: 20px;"></div>
