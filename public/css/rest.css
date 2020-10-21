@@ -66,8 +66,53 @@ nav li:nth-child(6) a:last-child,nav li:nth-child(7) a:last-child{
     position: absolute;
     z-index: 999;
     cursor: pointer;
+    display: block;
 }
 .mask:hover{
     opacity: 0.5;
     transition: all linear 2s;
 }
+
+/* ==========navBar========== */
+#navBar{
+    width: 50px; height: 220px;
+    position: fixed;
+    left: 20px; top: 20px;
+}
+#navBar img{
+    width: 30px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    position: absolute;
+}
+#navBar ul{
+    position: absolute;
+    top: 20px;
+    display: none;
+}
+#navBar li{
+    line-height: 30px;
+}
+#navBar a{
+    color: #aaa;
+}
+#navBar:hover ul{
+    display: block;
+}
+#navBar li:hover a{
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
