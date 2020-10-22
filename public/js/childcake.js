@@ -113,25 +113,74 @@ $.ajax({
             $('body').append(idStr);
         }
       }).then((data)=>{
+        var buyCarArr=JSON.parse(localStorage.getItem("buycar"))
+        
         for (var key in data.item.size) {
             $('.cakeSize').html(key)    //获取key值
-            $('.select-cake').append(`<option data-key="${key}">${key}--${data.item.size[key]}</option>`)
+            if( JSON.parse(localStorage.getItem("buycar")) ){
+                var length=buyCarArr.length;
+                // console.log(buyCarArr.length);//--------长度3
+                let opStr='';
+                 for(var i=0;i<length;i++){
+                     console.log(key,buyCarArr[i].size)
+                    if(key!=buyCarArr[i].size){
+                        opStr=`<option data-key="${key}" data-count="${0}">${key}--${data.item.size[key]}</option>`
+                        
+                    }else{
+                        opStr=`<option data-key="${key}" data-count="${buyCarArr[i].count}">${key}--${data.item.size[key]}</option>`;
+                        break;
+                    }
+                        
+                 }
+                 $('.select-cake').append(opStr)
+            
+        }
+        else{
+            $('.select-cake').append(`<option data-key="${key}" data-count="${0}">${key}--${data.item.size[key]}</option>`)
+        }
         }
         $('.wh-mask').css('display','block');
         $('.wh-mask').on('click','.close',function(){
           $('.wh-mask').remove();
           
         })
+        
         $('.wh-mask').on('click','.buy-cake',function(){
             let kk="";
+            let thisCount;
             for(var i=0;i<$(' .select-cake').children().length;i++){
                 if($(' .select-cake').children().eq(i).val()==$('.select-cake').val()){
                     kk=$(' .select-cake').children().eq(i).attr("data-key");
+                    thisCount=parseInt($(' .select-cake').children().eq(i).attr("data-count"))+1;
+                    $(' .select-cake').children().eq(i).attr("data-count",thisCount);
                 }
             }
+            if(localStorage.getItem("buycar")){//判断是否有购物车本地存储
+                buyCarArr=JSON.parse(localStorage.getItem("buycar"))
+                var length=buyCarArr.length;
+                buyCarArr=JSON.parse(localStorage.getItem("buycar"))
+                for(var i=0;i<length;i++){
+                    console.log(123)
+                    let ba=[...buyCarArr];
+                    if(kk==ba[i].size){//判断购物车本地存储中是否存在该size条数据
+                        console.log(ba[i])
+                        ba[i]={_id:data.item._id,size:kk,count:thisCount}
+                        localStorage.setItem("buycar", JSON.stringify(ba));
+                        
+                        console.log(-1)
+                        break
+                    }
+                    else{
+                        console.log(-2)
+                        let brr=[...buyCarArr,{_id:data.item._id,size:kk,count:thisCount}];
+                         localStorage.setItem("buycar", JSON.stringify(brr))
+                    }
+                }
+                 
+            }else{
+                localStorage.setItem("buycar", JSON.stringify([{_id:data.item._id,size:kk,count:1}]));
+            }
             
-            localStorage.setItem("_id", data.item._id);
-            localStorage.setItem("size", kk);
           alert('添加购物车成功')
         })
       })
